@@ -1,0 +1,12 @@
+yivoff_commonmark:
+    converters:
+        my_converter:
+            options:
+                commonmark:
+                    enable_em: false
+
+        gh_converter:
+            type: github
+
+        empty_converter:
+            type: custom

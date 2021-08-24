@@ -1,0 +1,7 @@
+yivoff_commonmark:
+    converters:
+        empty_converter:
+            type: custom
+            extensions:
+                - League\CommonMark\Extension\Autolink\AutolinkExtension
+                - League\CommonMark\Extension\InlinesOnly\InlinesOnlyExtension
