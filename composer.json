@@ -1,5 +1,5 @@
 {
-  "name": "yivi/commonmark-bundle",
+  "name": "yivoff/commonmark-bundle",
   "description": "Symfony bundle integrating League CommonMark for Symfony 5.3+ applications",
   "type": "symfony-bundle",
   "license": "MIT",
