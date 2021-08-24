@@ -10,7 +10,6 @@ use Symfony\Component\DependencyInjection\ServiceLocator;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
-
 use function array_key_first;
 use function array_keys;
 use function count;
@@ -22,7 +21,6 @@ use function sprintf;
  */
 class CommonMarkExtension extends AbstractExtension
 {
-
     public function __construct(private ServiceLocator $serviceLocator)
     {
     }
@@ -53,16 +51,16 @@ class CommonMarkExtension extends AbstractExtension
             }
 
             $converter = $this->serviceLocator->get($converterName);
-            if ( ! $converter instanceof CommonMarkConverter) {
+            if (!$converter instanceof CommonMarkConverter) {
                 return '';
             }
 
             return $converter->convertToHtml($markdown)->getContent();
         }
 
-        $converterName = YivoffCommonmarkBundle::BUNDLE_PREFIX . '.converters.' . $converterName;
+        $converterName = YivoffCommonmarkBundle::BUNDLE_PREFIX.'.converters.'.$converterName;
         if (false === $this->serviceLocator->has($converterName)) {
-            $message = 'The "%s" converter does not exist. You need to use one of these: %s';
+            $message             = 'The "%s" converter does not exist. You need to use one of these: %s';
             $availableConverters = implode(', ', array_keys($this->serviceLocator->getProvidedServices()));
 
             throw new InvalidArgumentException(sprintf($message, $converterName, $availableConverters));

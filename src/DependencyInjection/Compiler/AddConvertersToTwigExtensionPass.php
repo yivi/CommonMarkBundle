@@ -11,7 +11,6 @@ use Yivoff\CommonmarkBundle\DependencyInjection\YivoffCommonmarkExtension;
 use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
 use function array_keys;
 
-
 /**
  * @internal
  */
@@ -24,7 +23,7 @@ class AddConvertersToTwigExtensionPass implements CompilerPassInterface
 
         $services = [];
         foreach (array_keys($serviceIds) as $serviceId) {
-            $services[$serviceId] = new DependencyInjection\Reference((string)$serviceId);
+            $services[$serviceId] = new DependencyInjection\Reference((string) $serviceId);
         }
 
         $twigExtensionDefinition->setArgument(0, ServiceLocatorTagPass::register($container, $services));

@@ -11,6 +11,10 @@ use Yivoff\CommonmarkBundle\DependencyInjection\Compiler\AddConvertersToTwigExte
 use Yivoff\CommonmarkBundle\DependencyInjection\YivoffCommonmarkExtension;
 use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class CompilerPassTest extends TestCase
 {
     public function testDefinition(): void
