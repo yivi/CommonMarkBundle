@@ -11,9 +11,9 @@ jobs:
     name: PHP ${{ matrix.php }} and Symfony ${{ matrix.symfony }}
     strategy:
       matrix:
-        operating-system: [ ubuntu-latest, windows-latest ]
+        operating-system: [ ubuntu-latest ]
         php: [ '8.0' ]
-        symfony: ['~5.2.0', '~5.3.0']
+        symfony: ['~5.1.0', '~5.2.0', '~5.3.0']
 
     steps:
       - uses: actions/checkout@master
@@ -29,5 +29,11 @@ jobs:
           SYMFONY_REQUIRE: ${{ matrix.symfony }}
         uses: ramsey/composer-install@v1
 
+      - name: install test tools
+        run: composer bin all install
+
       - name: Run test suite on PHP ${{ matrix.php }} and Symfony ${{ matrix.symfony }}
         run: ./vendor/bin/phpunit
+
+      - name: Run Psalm
+        run: ./vendor/bin/psalm
