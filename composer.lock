@@ -2645,12 +2645,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SymfonyTest/symfony-bundle-test.git",
-                "reference": "5ce337b895a638a9d62b90d104d349ed07000fec"
+                "reference": "25420f86d6d8a89f6b6578818298532fb6f63658"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SymfonyTest/symfony-bundle-test/zipball/5ce337b895a638a9d62b90d104d349ed07000fec",
-                "reference": "5ce337b895a638a9d62b90d104d349ed07000fec",
+                "url": "https://api.github.com/repos/SymfonyTest/symfony-bundle-test/zipball/25420f86d6d8a89f6b6578818298532fb6f63658",
+                "reference": "25420f86d6d8a89f6b6578818298532fb6f63658",
                 "shasum": ""
             },
             "require": {
@@ -2684,7 +2684,7 @@
                 "issues": "https://github.com/SymfonyTest/symfony-bundle-test/issues",
                 "source": "https://github.com/SymfonyTest/symfony-bundle-test/tree/master"
             },
-            "time": "2021-08-24T15:56:06+00:00"
+            "time": "2021-08-24T18:26:50+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",

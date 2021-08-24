@@ -19,7 +19,7 @@ class TwigIntegrationTest extends KernelTestCase
     {
         self::bootKernel([
             'config' => static function (TestKernel $kernel): void {
-                $kernel->addConfig(__DIR__.'/../Fixtures/config/configuration_basic.yaml');
+                $kernel->addTestConfig(__DIR__.'/../Fixtures/config/configuration_basic.yaml');
             },
         ]);
 
@@ -38,7 +38,7 @@ class TwigIntegrationTest extends KernelTestCase
     {
         self::bootKernel([
             'config' => static function (TestKernel $kernel): void {
-                $kernel->addConfig(__DIR__.'/../Fixtures/config/configuration_multiple_converters.yaml');
+                $kernel->addTestConfig(__DIR__.'/../Fixtures/config/configuration_multiple_converters.yaml');
             },
         ]);
         $container = self::getContainer();
@@ -64,8 +64,8 @@ class TwigIntegrationTest extends KernelTestCase
          * @var TestKernel $kernel
          */
         $kernel = parent::createKernel($options);
-        $kernel->addBundle(YivoffCommonmarkBundle::class);
-        $kernel->addBundle(TwigBundle::class);
+        $kernel->addTestBundle(YivoffCommonmarkBundle::class);
+        $kernel->addTestBundle(TwigBundle::class);
 
         $kernel->handleOptions($options);
 
