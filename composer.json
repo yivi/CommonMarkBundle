@@ -1,7 +1,7 @@
 {
   "name": "yivoff/commonmark-bundle",
-  "description": "Symfony bundle integrating League CommonMark for Symfony 5.3+ applications",
   "type": "symfony-bundle",
+  "description": "Symfony bundle integrating League CommonMark for Symfony 5.3+ applications",
   "license": "MIT",
   "authors": [
     {
@@ -9,14 +9,23 @@
       "email": "ivan@yivoff.com"
     }
   ],
-  "minimum-stability": "stable",
   "require": {
     "php": ">=8.0",
-    "symfony/http-kernel": "^5.1",
-    "symfony/dependency-injection": "^5.1",
-    "symfony/config": "^5.1",
     "league/commonmark": "^2.0.2",
-    "symfony/framework-bundle": "^5.1"
+    "symfony/config": "^5.1",
+    "symfony/dependency-injection": "^5.1",
+    "symfony/framework-bundle": "^5.1",
+    "symfony/http-kernel": "^5.1"
+  },
+  "require-dev": {
+    "bamarni/composer-bin-plugin": "^1.4",
+    "matthiasnoback/symfony-config-test": "^4.2",
+    "nyholm/symfony-bundle-test": "dev-master",
+    "roave/security-advisories": "dev-master",
+    "symfony/filesystem": "^5.1",
+    "symfony/phpunit-bridge": "^5.1",
+    "symfony/twig-bundle": "^5.1",
+    "symfony/yaml": "^5.1"
   },
   "autoload": {
     "psr-4": {
@@ -28,13 +37,5 @@
       "Tests\\Yivoff\\CommonmarkBundle\\": "tests/"
     }
   },
-  "require-dev": {
-    "symfony/phpunit-bridge": "^5.1",
-    "symfony/yaml": "^5.1",
-    "symfony/twig-bundle": "^5.1",
-    "symfony/filesystem": "^5.1",
-    "bamarni/composer-bin-plugin": "^1.4",
-    "nyholm/symfony-bundle-test": "dev-master",
-    "matthiasnoback/symfony-config-test": "^4.2"
-  }
+  "minimum-stability": "stable"
 }
