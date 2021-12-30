@@ -13,8 +13,8 @@ jobs:
     strategy:
       matrix:
         operating-system: [ ubuntu-latest ]
-        php: [ '8.0' ]
-        symfony: ['~5.3.0']
+        php: [ '8.0','8.1' ]
+        symfony: ['~5.3.0', '~5.4.0', '~6.0.0']
 
     steps:
       - uses: actions/checkout@master
@@ -28,7 +28,7 @@ jobs:
       - name: Download dependencies
         env:
           SYMFONY_REQUIRE: ${{ matrix.symfony }}
-        uses: ramsey/composer-install@v1
+        uses: ramsey/composer-install@v2
 
       - name: install test tools
         run: composer bin all install
@@ -38,7 +38,6 @@ jobs:
 
       - uses: codecov/codecov-action@v2
         with:
-          #          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: ./coverage.xml
           fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)

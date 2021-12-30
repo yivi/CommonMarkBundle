@@ -10,22 +10,27 @@
     }
   ],
   "require": {
-    "php": ">=8.0",
+    "php": "^8.0",
     "league/commonmark": "^2.0.2",
-    "symfony/config": "^5.1",
-    "symfony/dependency-injection": "^5.1",
-    "symfony/framework-bundle": "^5.1",
-    "symfony/http-kernel": "^5.1"
+    "symfony/config": "^5.1 || ^6.0",
+    "symfony/dependency-injection": "^5.1 || ^6.0",
+    "symfony/framework-bundle": "^5.1 || ^6.0",
+    "symfony/http-kernel": "^5.1 || ^6.0"
   },
   "require-dev": {
     "bamarni/composer-bin-plugin": "^1.4",
     "matthiasnoback/symfony-config-test": "^4.2",
     "nyholm/symfony-bundle-test": "dev-master",
     "roave/security-advisories": "dev-master",
-    "symfony/filesystem": "^5.1",
-    "symfony/phpunit-bridge": "^5.1",
-    "symfony/twig-bundle": "^5.1",
-    "symfony/yaml": "^5.1"
+    "symfony/filesystem": "^5.1 || ^6.0",
+    "symfony/phpunit-bridge": "^5.1 || ^6.0",
+    "symfony/twig-bundle": "^5.1 || ^6.0",
+    "symfony/yaml": "^5.1 || ^6.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "bamarni/composer-bin-plugin": true
+    }
   },
   "autoload": {
     "psr-4": {
@@ -37,5 +42,17 @@
       "Tests\\Yivoff\\CommonmarkBundle\\": "tests/"
     }
   },
-  "minimum-stability": "stable"
+  "minimum-stability": "stable",
+  "scripts": {
+    "code-style": "vendor-bin/csfixer/vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix",
+    "coverage": "vendor-bin/testing/vendor/phpunit/phpunit",
+    "preflight": [
+      "@code-style",
+      "@psalm",
+      "@test"
+    ],
+    "psalm": "vendor-bin/static/vendor/vimeo/psalm/psalm",
+    "test": "vendor-bin/testing/vendor/phpunit/phpunit/phpunit",
+    "test-pretty": "vendor-bin/testing/vendor/phpunit/phpunit/phpunit --testdox"
+  }
 }
