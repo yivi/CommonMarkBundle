@@ -38,7 +38,7 @@ class BundleInitializationTest extends TestCase
 
         // Test if your services exists
         $this->assertTrue($container->has(YivoffCommonmarkBundle::BUNDLE_PREFIX.'.converters.default'));
-        $this->assertTrue($container->has(YivoffCommonmarkBundle::BUNDLE_PREFIX.'.converters.default'));
+
         $service = $container->get(YivoffCommonmarkBundle::BUNDLE_PREFIX.'.converters.default');
         $this->assertInstanceOf(CommonMark\CommonMarkConverter::class, $service);
     }

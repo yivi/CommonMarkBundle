@@ -23,7 +23,7 @@ class AddConvertersToTwigExtensionPass implements CompilerPassInterface
 
         $services = [];
         foreach (array_keys($serviceIds) as $serviceId) {
-            $services[$serviceId] = new DependencyInjection\Reference((string) $serviceId);
+            $services[$serviceId] = new DependencyInjection\Reference($serviceId);
         }
 
         $twigExtensionDefinition->setArgument(0, ServiceLocatorTagPass::register($container, $services));

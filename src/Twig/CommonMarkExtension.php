@@ -6,6 +6,7 @@ namespace Yivoff\CommonmarkBundle\Twig;
 
 use InvalidArgumentException;
 use League\CommonMark\CommonMarkConverter;
+use League\CommonMark\MarkdownConverterInterface;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
@@ -51,7 +52,7 @@ class CommonMarkExtension extends AbstractExtension
             }
 
             $converter = $this->serviceLocator->get($converterName);
-            if (!$converter instanceof CommonMarkConverter) {
+            if (!$converter instanceof MarkdownConverterInterface) {
                 return '';
             }
 

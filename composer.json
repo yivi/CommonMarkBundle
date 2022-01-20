@@ -44,15 +44,15 @@
   },
   "minimum-stability": "stable",
   "scripts": {
-    "code-style": "vendor-bin/csfixer/vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix",
+    "dev:cs": "vendor-bin/csfixer/vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix",
     "coverage": "vendor-bin/testing/vendor/phpunit/phpunit",
-    "preflight": [
-      "@code-style",
-      "@psalm",
-      "@test"
+    "dev:preflight": [
+      "@dev:cs",
+      "@dev:psalm",
+      "@dev:tests"
     ],
-    "psalm": "vendor-bin/static/vendor/vimeo/psalm/psalm",
-    "test": "vendor-bin/testing/vendor/phpunit/phpunit/phpunit",
-    "test-pretty": "vendor-bin/testing/vendor/phpunit/phpunit/phpunit --testdox"
+    "dev:psalm": "vendor-bin/static/vendor/vimeo/psalm/psalm",
+    "dev:tests": "vendor-bin/testing/vendor/phpunit/phpunit/phpunit",
+    "dev:tests-pretty": "vendor-bin/testing/vendor/phpunit/phpunit/phpunit --testdox"
   }
 }
