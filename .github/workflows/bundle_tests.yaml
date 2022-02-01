@@ -19,16 +19,23 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - name: "Cache Composer packages"
+        uses: "actions/cache@v2"
+        with:
+          path: "~/.composer/cache"
+          key: "php-${{ matrix.php }}-symfony-${{ matrix.symfony }}-composer-${{ hashFiles('composer.json') }}"
+          restore-keys: "php-"
+
       - name: Setup PHP ${{ matrix.php }}
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          tools: flex
+          tools: composer:v2,flex
 
       - name: Download dependencies
+        run: "composer update --prefer-dist"
         env:
           SYMFONY_REQUIRE: ${{ matrix.symfony }}
-        uses: ramsey/composer-install@v2
 
       - name: install test tools
         run: composer bin all install

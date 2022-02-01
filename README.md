@@ -2,6 +2,7 @@
 A **Symfony 5+** bundle to integrate [league/commonmark](https://github.com/thephpleague/commonmark) v2, 
 allowing you to set multiple Commonmark converters.
 
+[![PHP Version Require](http://poser.pugx.org/yivoff/commonmark-bundle/require/php)](https://packagist.org/packages/yivoff/commonmark-bundle)
 [![Latest Stable Version](http://poser.pugx.org/yivoff/commonmark-bundle/v)](https://packagist.org/packages/yivoff/commonmark-bundle)
 [![Total Downloads](http://poser.pugx.org/yivoff/commonmark-bundle/downloads)](https://packagist.org/packages/yivoff/commonmark-bundle)
 [![Latest Unstable Version](http://poser.pugx.org/yivoff/commonmark-bundle/v/unstable)](https://packagist.org/packages/yivoff/commonmark-bundle)
