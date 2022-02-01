@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection;
 use Yivoff\CommonmarkBundle\DependencyInjection\YivoffCommonmarkExtension;
 use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
+use function interface_exists;
 use function lcfirst;
 use function sprintf;
 use function str_replace;
@@ -78,9 +79,14 @@ class BundleInitializationTest extends TestCase
             $this->assertInstanceOf($converterClass, $service);
 
             $param = lcfirst(str_replace(' ', '', ucwords(str_replace('_', ' ', $converterName))));
-            $alias = sprintf(CommonMark\MarkdownConverterInterface::class.' $%s', $param);
 
-            self::assertTrue($container->hasAlias($alias));
+            if (interface_exists(CommonMark\MarkdownConverterInterface::class)) {
+                $aliasDeprecated = sprintf(CommonMark\MarkdownConverterInterface::class.' $%s', $param);
+            }
+            $aliasCurrent    = sprintf(CommonMark\ConverterInterface::class.' $%s', $param);
+
+            self::assertTrue($container->hasAlias($aliasDeprecated));
+            self::assertTrue($container->hasAlias($aliasCurrent));
         }
     }
 

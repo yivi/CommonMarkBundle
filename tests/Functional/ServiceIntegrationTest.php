@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tests\Yivoff\CommonmarkBundle\Functional;
 
 use League\CommonMark\CommonMarkConverter;
+use League\CommonMark\ConverterInterface;
 use League\CommonMark\GithubFlavoredMarkdownConverter;
-use League\CommonMark\MarkdownConverterInterface;
 use Nyholm\BundleTest\TestKernel;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
@@ -32,7 +32,7 @@ class ServiceIntegrationTest extends KernelTestCase
         $this->assertInstanceOf(CommonMarkConverter::class, $converter);
 
         $markdown     = '# Hello _World!_';
-        $actualHtml   = $converter->convertToHtml($markdown)->getContent();
+        $actualHtml   = $converter->convert($markdown)->getContent();
         $expectedHtml = '<h1>Hello <em>World!</em></h1>';
 
         $this->assertEquals($expectedHtml, trim($actualHtml));
@@ -47,7 +47,7 @@ class ServiceIntegrationTest extends KernelTestCase
         ]);
         $container = self::getContainer();
 
-        $aliasedConverter = $container->get(MarkdownConverterInterface::class.' $ghConverter');
+        $aliasedConverter = $container->get(ConverterInterface::class.' $ghConverter');
         $converter        = $container->get(YivoffCommonmarkBundle::BUNDLE_PREFIX.'.converters.gh_converter');
 
         $this->assertInstanceOf(GithubFlavoredMarkdownConverter::class, $converter);
@@ -56,7 +56,7 @@ class ServiceIntegrationTest extends KernelTestCase
         $markdown     = '# Hello _World!_';
         $expectedHtml = '<h1>Hello <em>World!</em></h1>';
 
-        $actualHtml = $converter->convertToHtml($markdown)->getContent();
+        $actualHtml = $converter->convert($markdown)->getContent();
 
         $this->assertEquals($expectedHtml, trim($actualHtml));
     }
@@ -75,7 +75,7 @@ class ServiceIntegrationTest extends KernelTestCase
         $this->assertInstanceOf(CommonMarkConverter::class, $converter);
 
         $markdown     = '# Hello _World!_';
-        $actualHtml   = $converter->convertToHtml($markdown)->getContent();
+        $actualHtml   = $converter->convert($markdown)->getContent();
         $expectedHtml = '<h1>Hello _World!_</h1>';
 
         $this->assertEquals($expectedHtml, trim($actualHtml));

@@ -6,7 +6,7 @@ namespace Yivoff\CommonmarkBundle\Twig;
 
 use InvalidArgumentException;
 use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\MarkdownConverterInterface;
+use League\CommonMark\ConverterInterface;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
@@ -52,11 +52,11 @@ class CommonMarkExtension extends AbstractExtension
             }
 
             $converter = $this->serviceLocator->get($converterName);
-            if (!$converter instanceof MarkdownConverterInterface) {
+            if (!$converter instanceof ConverterInterface) {
                 return '';
             }
 
-            return $converter->convertToHtml($markdown)->getContent();
+            return $converter->convert($markdown)->getContent();
         }
 
         $converterName = YivoffCommonmarkBundle::BUNDLE_PREFIX.'.converters.'.$converterName;
@@ -70,6 +70,6 @@ class CommonMarkExtension extends AbstractExtension
         /** @var CommonMarkConverter $converter */
         $converter = $this->serviceLocator->get($converterName);
 
-        return $converter->convertToHtml($markdown)->getContent();
+        return $converter->convert($markdown)->getContent();
     }
 }

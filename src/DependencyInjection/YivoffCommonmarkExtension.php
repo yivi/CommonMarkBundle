@@ -91,7 +91,10 @@ class YivoffCommonmarkExtension extends DependencyInjection\Extension\Extension
             ->addTag(self::SERVICE_TAG)
         ;
 
-        $container->registerAliasForArgument($converterServiceId, CommonMark\MarkdownConverterInterface::class, $converterName)->setPublic(true);
+        if (interface_exists(CommonMark\MarkdownConverterInterface::class)) {
+            $container->registerAliasForArgument($converterServiceId, CommonMark\MarkdownConverterInterface::class, $converterName)->setPublic(true);
+        }
+        $container->registerAliasForArgument($converterServiceId, CommonMark\ConverterInterface::class, $converterName)->setPublic(true);
     }
 
     // XML made me unhappy

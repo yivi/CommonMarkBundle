@@ -97,9 +97,9 @@ Additionally, the bundle registers an alias for each service, so one can use the
 
 Again, for the above example the registered aliases would be:
 
-* `League\CommonMark\MarkdownConverterInterface $commonmark`
-* `League\CommonMark\MarkdownConverterInterface $github`
-* `League\CommonMark\MarkdownConverterInterface $myCustom`
+* `League\CommonMark\ConverterInterface $commonmark`
+* `League\CommonMark\ConverterInterface $github`
+* `League\CommonMark\ConverterInterface $myCustom`
 
 ### Usage in templates
 
