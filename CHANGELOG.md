@@ -12,7 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Symfony 6 and PHP 8 compatibility
 
-# [v1.1.0](https://github.com/yivi/CommonMarkBundle/releases/tag/v1.1.0)
+## [v1.1.0](https://github.com/yivi/CommonMarkBundle/releases/tag/v1.1.0) - 2022-02-01
+### Added
 - Bump "league/commonmark" to "^2.2.0"
 - Now aliases are created with ConverterInterface typehint, since MarkdownConverterInterface is now deprecated
   (the old aliases are still created as long as the old interface exists, for BC) 
