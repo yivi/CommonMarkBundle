@@ -1,2 +1,6 @@
 framework:
   http_method_override: false
+  php_errors:
+    log: false
+  handle_all_throwables: true
+
