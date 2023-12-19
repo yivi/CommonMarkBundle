@@ -9,6 +9,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection;
 use Yivoff\CommonmarkBundle\DependencyInjection\YivoffCommonmarkExtension;
 use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
+
 use function interface_exists;
 use function lcfirst;
 use function sprintf;
@@ -17,6 +18,7 @@ use function ucwords;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class BundleInitializationTest extends TestCase

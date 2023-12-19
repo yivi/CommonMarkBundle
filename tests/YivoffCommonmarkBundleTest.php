@@ -10,6 +10,7 @@ use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class YivoffCommonmarkBundleTest extends TestCase

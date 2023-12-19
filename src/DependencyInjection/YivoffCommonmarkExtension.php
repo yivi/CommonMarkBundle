@@ -8,6 +8,7 @@ use League\CommonMark;
 use Symfony\Component\DependencyInjection;
 use Twig\Extension\AbstractExtension;
 use Yivoff\CommonmarkBundle;
+
 use function class_exists;
 
 /**

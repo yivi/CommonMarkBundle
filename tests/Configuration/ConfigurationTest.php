@@ -10,6 +10,7 @@ use Yivoff\CommonmarkBundle\DependencyInjection\Configuration;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class ConfigurationTest extends TestCase

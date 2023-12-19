@@ -11,6 +11,7 @@ use Symfony\Component\DependencyInjection\ServiceLocator;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
+
 use function array_key_first;
 use function array_keys;
 use function count;
@@ -22,9 +23,7 @@ use function sprintf;
  */
 class CommonMarkExtension extends AbstractExtension
 {
-    public function __construct(private ServiceLocator $serviceLocator)
-    {
-    }
+    public function __construct(private ServiceLocator $serviceLocator) {}
 
     /** @return TwigFilter[] */
     public function getFilters(): array

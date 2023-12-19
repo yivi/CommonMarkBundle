@@ -10,10 +10,12 @@ use League\CommonMark\GithubFlavoredMarkdownConverter;
 use Nyholm\BundleTest\TestKernel;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
+
 use function trim;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class ServiceIntegrationTest extends KernelTestCase

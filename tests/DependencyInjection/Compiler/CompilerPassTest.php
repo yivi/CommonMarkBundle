@@ -13,6 +13,7 @@ use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class CompilerPassTest extends TestCase
@@ -57,15 +58,9 @@ class CompilerPassTest extends TestCase
 
 class MockTwigExtension
 {
-    public function __construct(public ServiceLocator $serviceLocator)
-    {
-    }
+    public function __construct(public ServiceLocator $serviceLocator) {}
 }
 
-class Foo
-{
-}
+class Foo {}
 
-class Bar
-{
-}
+class Bar {}

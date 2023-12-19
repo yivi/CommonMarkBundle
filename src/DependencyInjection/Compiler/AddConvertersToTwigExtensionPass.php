@@ -9,6 +9,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Compiler\ServiceLocatorTagPass;
 use Yivoff\CommonmarkBundle\DependencyInjection\YivoffCommonmarkExtension;
 use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
+
 use function array_keys;
 
 /**

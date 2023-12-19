@@ -11,6 +11,7 @@ use Yivoff\CommonmarkBundle\YivoffCommonmarkBundle;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class TwigIntegrationTest extends KernelTestCase
