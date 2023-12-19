@@ -41,6 +41,7 @@ class TwigIntegrationTest extends KernelTestCase
         self::bootKernel([
             'config' => static function (TestKernel $kernel): void {
                 $kernel->addTestConfig(__DIR__.'/../Fixtures/config/configuration_multiple_converters.yaml');
+                $kernel->addTestConfig(__DIR__.'/../Fixtures/config/framework-config.yaml');
             },
         ]);
         $container = self::getContainer();
